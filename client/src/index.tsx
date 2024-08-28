@@ -2,6 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import "./assets/fonts/integral/integralcf-Bold.ttf";
+import "./assets/fonts/satoshi/Satoshi-Bold.ttf";
+import "./assets/fonts/satoshi/Satoshi-Medium.ttf";
+import "./assets/fonts/satoshi/Satoshi-Regular.ttf";
+import "./style.scss";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

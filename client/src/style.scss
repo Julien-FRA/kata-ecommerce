@@ -1,0 +1,222 @@
+// Colors style
+$white: #fff;
+$red: #ef2929;
+$black: #111111;
+$grey: #555555;
+$light-grey: #999999;
+$background: #f2f0f1;
+
+// Reset
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  padding: 25px;
+
+  @media (max-width: 996px) {
+    padding: 10px;
+  }
+}
+
+.App {
+  background-color: $background;
+}
+
+// Fonts style
+@font-face {
+  font-family: "Satoshi-Bold";
+  src: url("./assets/fonts/satoshi/Satoshi-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Satoshi-Regular";
+  src: url("./assets/fonts/satoshi/Satoshi-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Satoshi-Medium";
+  src: url("./assets/fonts/satoshi/Satoshi-Medium.ttf");
+}
+
+@font-face {
+  font-family: "IntegralCf-Bold";
+  src: url("./assets/fonts/integral/integralcf-Bold.ttf");
+}
+
+h1,
+.h1 {
+  font-family: "IntegralCf-Bold";
+  font-size: 48px;
+  line-height: 1.2;
+
+  @media (max-width: 992px) {
+    font-size: 36px;
+  }
+}
+
+h2,
+.h2 {
+  font-family: "IntegralCf-Bold";
+  font-size: 42px;
+  line-height: 1.2;
+
+  @media (max-width: 992px) {
+    font-size: 32px;
+  }
+}
+
+h3,
+.h3 {
+  font-family: "Satoshi-Medium";
+  font-size: 36px;
+
+  @media (max-width: 992px) {
+    font-size: 28px;
+  }
+}
+
+h4,
+.h4 {
+  font-family: "Satoshi-Medium";
+  font-size: 32px;
+
+  @media (max-width: 992px) {
+    font-size: 24px;
+  }
+}
+
+p,
+.p {
+  font-family: "Satoshi-Medium";
+  font-size: 16px;
+
+  @media (max-width: 992px) {
+    font-size: 14px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}
