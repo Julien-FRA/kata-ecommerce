@@ -1,0 +1,13 @@
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 60px 60px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+
+  p {
+    margin-top: 30px;
+  }
+}

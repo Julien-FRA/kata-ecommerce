@@ -30,9 +30,6 @@ export const Header = () => {
           <li className="nav-item">
             <a href="/">Caps</a>
           </li>
-          <li className="nav-item">
-            <a href="/">About us</a>
-          </li>
         </ul>
       ) : (
         <ul className="left-menu">
@@ -49,9 +46,6 @@ export const Header = () => {
           </li>
           <li className="nav-item">
             <a href="/">Caps</a>
-          </li>
-          <li className="nav-item">
-            <a href="/">About us</a>
           </li>
         </ul>
       )}
