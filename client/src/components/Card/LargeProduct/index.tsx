@@ -2,9 +2,9 @@ import React from "react";
 import product from "../../../assets/images/product_1.webp";
 import "./style.scss";
 
-export const ProductCard = () => {
+export const LargeProductCard = () => {
   return (
-    <a href="#" className="product-container">
+    <a href="#" className="large-product-container">
       <figure>
         <img src={product} alt="product" />
       </figure>

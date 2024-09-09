@@ -1,0 +1,24 @@
+.selected-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
+
+  .title-categ {
+    margin-bottom: 15px;
+  }
+
+  .subtitle-categ {
+    margin: 15px 0 30px;
+  }
+
+  .small-product-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 15px;
+    max-width: 1440px;
+  }
+}

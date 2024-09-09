@@ -1,12 +1,12 @@
 import React from "react";
-import { ProductCard } from "../../Card/Product";
+import { LargeProductCard } from "../../Card/LargeProduct";
 import "./style.scss";
 
 export const DiscoverContainer = () => {
   return (
     <div className="discover-container">
-      <ProductCard />
-      <ProductCard />
+      <LargeProductCard />
+      <LargeProductCard />
     </div>
   );
 };
