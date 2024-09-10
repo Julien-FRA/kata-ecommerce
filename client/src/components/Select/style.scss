@@ -1,0 +1,54 @@
+.select-container {
+  width: 50%;
+
+  @media (max-width: 996px) {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  .price {
+    margin-bottom: 30px;
+  }
+
+  form {
+    .option {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+
+      label {
+        margin-bottom: 10px;
+      }
+
+      select {
+        color: #444;
+        background-color: #fff;
+        height: 40px;
+        outline: none;
+        margin: 0;
+        border: 1px solid #cacaca;
+        border-radius: 0;
+        padding-right: 1.5rem;
+      }
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 15px;
+      background-color: #ef2929;
+      color: #fff;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.25s;
+
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+  }
+}

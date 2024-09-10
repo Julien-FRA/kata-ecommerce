@@ -1,0 +1,45 @@
+.carousel-container {
+  width: 50%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+
+  @media (max-width: 996px) {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .image-container {
+    position: relative;
+    width: 80%;
+
+    figure {
+      &:not(.show) {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+
+  .button-container {
+    width: 20%;
+    max-height: 412px;
+    overflow: hidden;
+
+    @media (max-width: 996px) {
+      max-height: 562px;
+    }
+
+    button {
+      padding: 0;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}

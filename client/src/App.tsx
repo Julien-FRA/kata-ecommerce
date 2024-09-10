@@ -6,9 +6,11 @@ import { Footer } from "./components/Nav/Footer";
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Router />
-      <Footer />
+      <div className="wrapper">
+        <Header />
+        <Router />
+        <Footer />
+      </div>
     </div>
   );
 }
