@@ -39,22 +39,22 @@ export const Header = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a href="/">Hoodies</a>
+            <a href="/product">Hoodies</a>
           </li>
           <li className="nav-item">
-            <a href="/">Sweat shirts</a>
+            <a href="/product">Sweat shirts</a>
           </li>
           <li className="nav-item">
-            <a href="/">Caps</a>
+            <a href="/product">Caps</a>
           </li>
         </ul>
       )}
       <ul className="right-menu">
         <li className="nav-item">
-          <a href="/">Panier</a>
+          <a href="/basket">Panier</a>
         </li>
         <li className="nav-item">
-          <a href="/">Compte</a>
+          <a href="/register">Compte</a>
         </li>
       </ul>
     </nav>

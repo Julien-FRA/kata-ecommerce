@@ -1,0 +1,39 @@
+.basket-price-item-container {
+  background-color: #dedede;
+  padding: 20px;
+
+  .h2 {
+    margin-bottom: 20px;
+  }
+
+  span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #555555;
+  }
+
+  .total-price,
+  .delivery {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+
+  button {
+    margin-top: 20px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    height: 40px;
+    border-radius: 30px;
+    transition: opacity 0.25s;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}
