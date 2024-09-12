@@ -6,7 +6,7 @@ import { Details } from "../../Details";
 
 export const ItemProduct = () => {
   return (
-    <div className="item-product-container">
+    <div className="item-product-container wrapper">
       <div className="top-container">
         <Carousel />
         <Select />

@@ -4,7 +4,7 @@ import "./style.scss";
 
 export const DiscoverContainer = () => {
   return (
-    <div className="discover-container">
+    <div className="discover-container wrapper">
       <LargeProductCard />
       <LargeProductCard />
     </div>

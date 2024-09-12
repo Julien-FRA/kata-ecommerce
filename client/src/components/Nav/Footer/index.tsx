@@ -5,7 +5,7 @@ import "./style.scss";
 
 export const Footer = () => {
   return (
-    <div className="footer-container">
+    <div className="footer-container wrapper">
       <figure className="logo">
         <img src={logo} alt="logo" />
       </figure>

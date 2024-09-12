@@ -10,7 +10,7 @@ export const Header = () => {
   };
 
   return (
-    <nav className="menu">
+    <nav className="menu wrapper">
       <div className="mobile-menu" id="burger-menu" onClick={toggleMenu}>
         Menu
       </div>
