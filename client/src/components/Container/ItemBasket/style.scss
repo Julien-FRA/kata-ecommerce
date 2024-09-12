@@ -1,0 +1,44 @@
+.basket-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  min-height: 65vh;
+
+  h1 {
+    text-align: center;
+  }
+
+  .items-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 30px;
+
+    @media (max-width: 998px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .basket-item-container,
+    .basket-price-container {
+      padding: 20px;
+    }
+
+    .basket-item-container {
+      margin-right: 20px;
+      width: 60%;
+
+      @media (max-width: 998px) {
+        width: 90%;
+      }
+    }
+
+    .basket-price-container {
+      width: 40%;
+
+      @media (max-width: 998px) {
+        width: 90%;
+      }
+    }
+  }
+}
