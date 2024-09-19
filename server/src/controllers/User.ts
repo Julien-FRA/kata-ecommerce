@@ -36,3 +36,42 @@ exports.register = async (req, res) => {
       });
     });
 };
+
+exports.login = async (req, res) => {
+  const { name, password } = req.body;
+
+  if (!name && !password) {
+    return res.status(400).send({ message: "Content can not be empty!" });
+  }
+
+  try {
+    const user = await UserModel.findOne({ name });
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    const passwordMatch = await bcrypt.compare(
+      req.body.password,
+      user.password
+    );
+
+    if (!passwordMatch) {
+      return res.status(401).json({ message: "Incorrect password" });
+    }
+
+    const token = jwt.sign({ userId: user._id }, process.env.SECRET_KEY, {
+      expiresIn: "1 hour",
+    });
+
+    const userInformation = {
+      id: user._id,
+      email: user.email,
+      name: user.name,
+      role: user.role,
+    };
+
+    res.json({ token, userInformation });
+  } catch (err) {
+    return res.status(401).json({ message: err.message });
+  }
+};

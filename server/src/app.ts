@@ -24,6 +24,10 @@ app.use(cors(corsOptions));
 const UserRoute = require("./routes/User");
 app.use("/user", UserRoute);
 
+// Product Route
+const ProductRoute = require("./routes/Product");
+app.use("/product", ProductRoute);
+
 app.listen(port, () => {
   return console.log(`Express is listening at http://localhost:${port}`);
 });
