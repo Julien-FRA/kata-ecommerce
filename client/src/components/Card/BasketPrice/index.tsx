@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.scss";
+import { Button } from "../../Buttons";
 
 export const BasketPrice = () => {
   return (
@@ -15,7 +16,12 @@ export const BasketPrice = () => {
         <p>9,99€</p>
       </div>
       <span />
-      <button className="p">Paiement</button>
+      <Button
+        type={"submit"}
+        variant={"black"}
+        size={"large"}
+        content={"Paiement"}
+      />
     </div>
   );
 };

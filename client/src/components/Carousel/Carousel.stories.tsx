@@ -1,20 +1,25 @@
-import { fn } from "@storybook/test";
+import type { StoryObj } from "@storybook/react";
 
 import { Carousel } from ".";
 
-export default {
+const meta = {
   title: "Carousel",
-  component: "Carousel",
-  args: {
-    children: "Carousel",
-  },
+  component: Carousel,
+  tags: ["autodocs"],
   parameters: {
     docs: {
-      toc: true, // 👈 Enables the table of contents
+      toc: true,
     },
+  },
+  argTypes: {
+    children: "Carousel",
   },
 };
 
-export const Default = {
+export default meta;
+
+type Story = StoryObj<typeof Carousel>;
+
+export const Default: Story = {
   render: () => <Carousel />,
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import "../style.scss";
+import { Button } from "../../Buttons";
 
 export const RegisterForm = () => {
   return (
@@ -24,6 +25,12 @@ export const RegisterForm = () => {
             placeholder="Ton mot de passe..."
           />
         </div>
+        <Button
+          type={"submit"}
+          variant={"red"}
+          size={"large"}
+          content={"Envoyer"}
+        />
       </form>
     </div>
   );
