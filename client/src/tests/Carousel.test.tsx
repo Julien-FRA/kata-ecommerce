@@ -4,6 +4,12 @@ import userEvent from "@testing-library/user-event";
 import { Carousel } from "../components/Carousel";
 
 describe("<Carousel />", () => {
+  test("Snapshot test", () => {
+    const carousel = render(<Carousel />);
+
+    expect(carousel).toMatchSnapshot();
+  });
+
   test(`Basic test`, () => {
     // Génaration du DOM virtuel
     render(<Carousel />);

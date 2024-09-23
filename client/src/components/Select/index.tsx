@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.scss";
+import { Button } from "../Buttons";
 
 export const Select = () => {
   return (
@@ -22,7 +23,12 @@ export const Select = () => {
             <option value="bleu">Bleu</option>
           </select>
         </div>
-        <button className="p">Ajouter au panier</button>
+        <Button
+          type={"submit"}
+          variant={"red"}
+          size={"large"}
+          content={"Ajouter au panier"}
+        />
       </form>
     </div>
   );

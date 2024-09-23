@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "../../Buttons";
 
 export const LoginForm = () => {
   return (
@@ -20,6 +21,12 @@ export const LoginForm = () => {
             placeholder="Ton mot de passe..."
           />
         </div>
+        <Button
+          type={"submit"}
+          variant={"red"}
+          size={"large"}
+          content={"Envoyer"}
+        />
       </form>
     </div>
   );

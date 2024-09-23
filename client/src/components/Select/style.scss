@@ -38,17 +38,6 @@
 
     button {
       margin-top: 15px;
-      padding: 15px;
-      background-color: #ef2929;
-      color: #fff;
-      border-radius: 30px;
-      border: none;
-      cursor: pointer;
-      transition: opacity 0.25s;
-
-      &:hover {
-        opacity: 0.75;
-      }
     }
   }
 }
