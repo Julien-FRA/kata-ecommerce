@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "../style.scss";
+import { useForm } from "react-hook-form";
 import { Button } from "../../Buttons";
 import { Input } from "../../Inputs";
+import { useSignUp } from "../../../utils/api/signUp.api";
+import { CreateUser } from "../../../utils/types/user.type";
 
 export const RegisterForm = () => {
+  const { register, handleSubmit } = useForm<CreateUser>();
+  const [success, setSuccess] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
+  const signUp = useSignUp();
+
+  const onSubmit = handleSubmit(async (data: CreateUser) => {
+    const response = signUp(data);
+
+    console.log(response);
+  });
+
   return (
     <div className="form-container register-container wrapper">
-      <form>
+      <form onSubmit={onSubmit}>
         <div className="input-container">
           <Input
             type={"text"}

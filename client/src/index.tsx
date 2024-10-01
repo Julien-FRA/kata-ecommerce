@@ -7,6 +7,7 @@ import "./assets/fonts/satoshi/Satoshi-Bold.ttf";
 import "./assets/fonts/satoshi/Satoshi-Medium.ttf";
 import "./assets/fonts/satoshi/Satoshi-Regular.ttf";
 import "./style.scss";
+import { QueryClientProvider } from "@tanstack/react-query";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
