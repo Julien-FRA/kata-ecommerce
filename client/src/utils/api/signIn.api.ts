@@ -5,7 +5,7 @@ import {
 } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import { useSnackbar } from "notistack";
-import { ResponseError } from "../errors/responseError";
+import { responseError } from "../errors/responseError";
 import { User } from "../types/user.type";
 
 const api = process.env.REACT_API;
@@ -20,7 +20,7 @@ const signIn = async (name: string, password: string): Promise<User> => {
   });
 
   if (!response.ok) {
-    throw new ResponseError("Erreur lors du login", response);
+    return responseError(response);
   }
 
   return await response.json();

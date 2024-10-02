@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../style.scss";
 import { useForm } from "react-hook-form";
 import { Button } from "../../Buttons";
-import { Input } from "../../Inputs";
+// import { Input } from "../../Inputs";
 import { useSignUp } from "../../../utils/api/signUp.api";
 import { CreateUser } from "../../../utils/types/user.type";
 
@@ -13,6 +13,7 @@ export const RegisterForm = () => {
   const signUp = useSignUp();
 
   const onSubmit = handleSubmit(async (data: CreateUser) => {
+    console.log(data);
     const response = signUp(data);
 
     console.log(response);
@@ -22,27 +23,30 @@ export const RegisterForm = () => {
     <div className="form-container register-container wrapper">
       <form onSubmit={onSubmit}>
         <div className="input-container">
-          <Input
+          <input
+            className="input"
             type={"text"}
-            name={"name"}
             id={"name"}
             placeholder={"Ton nom..."}
+            {...register("name")}
           />
         </div>
         <div className="input-container">
-          <Input
+          <input
+            className="input"
             type={"email"}
-            name={"email"}
             id={"email"}
             placeholder={"Ton email..."}
+            {...register("email")}
           />
         </div>
         <div className="input-container">
-          <Input
+          <input
+            className="input"
             type={"password"}
-            name={"password"}
             id={"password"}
             placeholder={"Ton mot de passe..."}
+            {...register("password")}
           />
         </div>
         <Button
