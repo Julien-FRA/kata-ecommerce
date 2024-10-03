@@ -5,7 +5,7 @@ import { Select } from "../../Select";
 import { Details } from "../../Details";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { getProduct } from "../../../utils/api/product/products.api";
+import { getProduct } from "../../../utils/api/product/product.api";
 import { Product } from "../../../utils/types/product.type";
 
 export const ItemProduct = () => {

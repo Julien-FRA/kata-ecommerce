@@ -2,7 +2,7 @@ import React from "react";
 import "./style.scss";
 import { SmallProductCard } from "../../Card/SmallProduct";
 import { useQuery } from "@tanstack/react-query";
-import { getProducts } from "../../../utils/api/product/products.api";
+import { getProducts } from "../../../utils/api/product/product.api";
 import { Product } from "../../../utils/types/product.type";
 
 export const ListProduct = () => {

@@ -3,20 +3,31 @@ import "../style.scss";
 import { useForm } from "react-hook-form";
 import { Button } from "../../Buttons";
 // import { Input } from "../../Inputs";
-import { useSignUp } from "../../../utils/api/signUp.api";
 import { CreateUser } from "../../../utils/types/user.type";
+import { signUp } from "../../../utils/api/user/user.api";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 export const RegisterForm = () => {
   const { register, handleSubmit } = useForm<CreateUser>();
   const [success, setSuccess] = useState<boolean>(false);
-  const [error, setError] = useState<boolean>(false);
-  const signUp = useSignUp();
+  // const [error, setError] = useState<boolean>(false);
+  const queryClient = useQueryClient();
 
-  const onSubmit = handleSubmit(async (data: CreateUser) => {
-    console.log(data);
-    const response = signUp(data);
+  const queryKey = ["user"];
+  const { mutateAsync } = useMutation(
+    async (data: CreateUser) => {
+      signUp(data);
+    },
+    {
+      onSuccess: (data) => {
+        queryClient.setQueryData(queryKey, data);
+        setSuccess(true);
+      },
+    }
+  );
 
-    console.log(response);
+  const onSubmit = handleSubmit(async (dataUser: CreateUser) => {
+    mutateAsync(dataUser);
   });
 
   return (
