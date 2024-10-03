@@ -2,25 +2,32 @@ import React from "react";
 import "./style.scss";
 import { Button } from "../Buttons";
 
-export const Select = () => {
+interface SelectProps {
+  name: string;
+  price: number;
+  size: "XS" | "S" | "M" | "L" | "XL";
+  color: string;
+}
+
+export const Select = ({ name, price, size, color }: SelectProps) => {
   return (
     <div className="select-container">
-      <h2>Hoodie Awakened</h2>
-      <p className="price">60,00€</p>
+      <h2>{name}</h2>
+      <p className="price">{price}€</p>
       <form>
         <div className="option">
           <label className="color p">Taille</label>
           <select name="" id="">
-            <option value="marron">XS</option>
-            <option value="bleu">S</option>
-            <option value="bleu">M</option>
+            <option value="marron">{size}</option>
+            <option value="bleu">{size}</option>
+            <option value="bleu">{size}</option>
           </select>
         </div>
         <div className="option">
           <label className="color p">Couleurs</label>
           <select name="" id="">
-            <option value="marron">Marron</option>
-            <option value="bleu">Bleu</option>
+            <option value="marron">{color}</option>
+            <option value="bleu">{color}</option>
           </select>
         </div>
         <Button
