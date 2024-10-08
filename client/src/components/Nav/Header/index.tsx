@@ -54,7 +54,7 @@ export const Header = () => {
           <a href="/basket">Panier</a>
         </li>
         <li className="nav-item">
-          <a href="/register">Compte</a>
+          <a href="/login">Login</a>
         </li>
       </ul>
     </nav>

@@ -1,33 +1,31 @@
 import React, { useState } from "react";
 import "../style.scss";
+import "../../Inputs/style.scss";
 import { useForm } from "react-hook-form";
 import { Button } from "../../Buttons";
-// import { Input } from "../../Inputs";
 import { CreateUser } from "../../../utils/types/user.type";
-import { signUp } from "../../../utils/api/user/user.api";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { signUp } from "../../../utils/api/user/signUp.api";
+import { useNavigate } from "react-router-dom";
 
 export const RegisterForm = () => {
   const { register, handleSubmit } = useForm<CreateUser>();
   const [success, setSuccess] = useState<boolean>(false);
-  // const [error, setError] = useState<boolean>(false);
-  const queryClient = useQueryClient();
-
-  const queryKey = ["user"];
-  const { mutateAsync } = useMutation(
-    async (data: CreateUser) => {
-      signUp(data);
-    },
-    {
-      onSuccess: (data) => {
-        queryClient.setQueryData(queryKey, data);
-        setSuccess(true);
-      },
-    }
-  );
+  const [error, setError] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   const onSubmit = handleSubmit(async (dataUser: CreateUser) => {
-    mutateAsync(dataUser);
+    const res = await signUp(dataUser);
+
+    if (res.user) {
+      setSuccess(true);
+      setError(false);
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000);
+    } else {
+      setSuccess(false);
+      setError(true);
+    }
   });
 
   return (
@@ -67,6 +65,12 @@ export const RegisterForm = () => {
           content={"Envoyer"}
         />
       </form>
+      {success && (
+        <p className="success">Votre compte a été créée avec succès !</p>
+      )}
+      {error && (
+        <p className="error">Erreur lors de la création de votre compte...</p>
+      )}
     </div>
   );
 };
