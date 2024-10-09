@@ -22,5 +22,19 @@
         margin-bottom: 0;
       }
     }
+
+    .button-container {
+      margin-bottom: 20px;
+    }
+  }
+
+  a {
+    margin-top: 5px;
+    text-decoration: underline;
+  }
+
+  .success,
+  .error {
+    margin-bottom: 10px;
   }
 }

@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import "./style.scss";
 import logo from "../../../assets/images/logo-menu.png";
+import { useAuth } from "../../../utils/context/useAuth";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
+  const { isLoggedIn, user, logout } = useAuth();
 
   const toggleMenu = () => {
     setOpenMenu(!openMenu);
@@ -53,9 +56,17 @@ export const Header = () => {
         <li className="nav-item">
           <a href="/basket">Panier</a>
         </li>
-        <li className="nav-item">
-          <a href="/register">Compte</a>
-        </li>
+        {isLoggedIn() ? (
+          <li className="nav-item">
+            <a href="" onClick={logout}>
+              Logout
+            </a>
+          </li>
+        ) : (
+          <li className="nav-item">
+            <a href="/login">Login</a>
+          </li>
+        )}
       </ul>
     </nav>
   );

@@ -71,7 +71,16 @@ exports.login = async (req, res) => {
     };
 
     res.json({ token, userInformation });
-  } catch (err) {
-    return res.status(401).json({ message: err.message });
+  } catch (error) {
+    return res.status(401).json({ message: error.message });
+  }
+};
+
+exports.getAllUsers = async (req, res) => {
+  try {
+    const users = await UserModel.find();
+    res.status(200).json(users);
+  } catch (error) {
+    return res.status(401).json({ message: error.message });
   }
 };
