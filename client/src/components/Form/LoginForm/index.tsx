@@ -6,21 +6,20 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { LoginUser } from "../../../utils/types/user.type";
 import { signIn, useUser } from "../../../utils/api/user/signIn.api";
+import { useAuth } from "../../../utils/context/useAuth";
 
 export const LoginForm = () => {
   const { register, handleSubmit } = useForm<LoginUser>();
   const [success, setSuccess] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
+  const { loginUser } = useAuth();
   const navigate = useNavigate();
 
   const onSubmit = handleSubmit(async (dataUser: LoginUser) => {
     const res = await signIn(dataUser);
 
-    console.log(res);
-
-    if (res.user) {
-      const test = useUser(dataUser);
-      console.log(test);
+    if (res.userInformation) {
+      loginUser(res);
       setSuccess(true);
       setError(false);
       setTimeout(() => {
@@ -60,6 +59,8 @@ export const LoginForm = () => {
           content={"Envoyer"}
         />
       </form>
+      {success && <p className="success">Vous êtes connecté !</p>}
+      {error && <p className="error">Erreur lors de la connexion...</p>}
       <p>Pas encore inscrit ?</p>
       <Link to={"/register"} className="p">
         S'inscrire

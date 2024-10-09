@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { responseError } from "../../errors/responseError";
-import { LoginUser, User } from "../../types/user.type";
+import { LoginUser } from "../../types/user.type";
 
 export const signIn = async (data: LoginUser) => {
   try {

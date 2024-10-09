@@ -5,15 +5,18 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Router } from "./router";
 import { Header } from "./components/Nav/Header";
 import { Footer } from "./components/Nav/Footer";
+import { UserProvider } from "./utils/context/useAuth";
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="App">
-        <Header />
-        <Router />
-        <ReactQueryDevtools initialIsOpen={false} />
-        <Footer />
+        <UserProvider>
+          <Header />
+          <Router />
+          <ReactQueryDevtools initialIsOpen={false} />
+          <Footer />
+        </UserProvider>
       </div>
     </QueryClientProvider>
   );
