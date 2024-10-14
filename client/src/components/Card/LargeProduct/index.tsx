@@ -2,20 +2,25 @@ import React from "react";
 import product from "../../../assets/images/product_1.webp";
 import "./style.scss";
 import { Button } from "../../Buttons";
+import { Link } from "react-router-dom";
 
-export const LargeProductCard = () => {
+interface LargeProductCardProps {
+  category: "hoodies" | "sweats" | "t-shirts" | "caps";
+}
+
+export const LargeProductCard = ({ category }: LargeProductCardProps) => {
   return (
-    <a href="#" className="large-product-container">
+    <Link to={`/${category}`} className="large-product-container">
       <figure>
         <img src={product} alt="product" />
       </figure>
-      <h2>Hoodies</h2>
+      <h2>{category}</h2>
       <Button
         type={"submit"}
         variant={"red"}
         size={"small"}
         content={"Découvrir"}
       />
-    </a>
+    </Link>
   );
 };
