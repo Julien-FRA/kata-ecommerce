@@ -41,7 +41,7 @@ export const Router = () => {
           }
         />
         <Route
-          path="/product"
+          path="/:category"
           element={
             <ProtectedRoute>
               <SelectProduct />
@@ -49,7 +49,7 @@ export const Router = () => {
           }
         />
         <Route
-          path="/product/:idProduct"
+          path="/:category/:idProduct"
           element={
             <ProtectedRoute>
               <Product />
